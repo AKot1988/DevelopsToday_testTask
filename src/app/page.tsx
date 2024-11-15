@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import classes from './page.module.scss';
 
-export default function FilterPage() {
+const FilterPage: FC = async() => {
+  const cars = await fetch('https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json').then(res => res.json());
+  console.log(cars);
   return (
     <div className={classes.container}>
       <div className={classes.filterPage}>
@@ -10,3 +12,5 @@ export default function FilterPage() {
     </div>
   );
 }
+
+export default FilterPage;
