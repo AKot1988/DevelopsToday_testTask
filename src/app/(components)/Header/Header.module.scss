@@ -1,0 +1,18 @@
+@import "../../variables.scss";
+
+.container {
+  flex-shrink: 0;
+  background: $mainBackground;
+}
+
+.header {
+  display: flex;
+  padding-left: 20px;
+  justify-content: start;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: $contentWidth;
+  margin: 0 auto;
+  height: 100px;
+  background: $mainContentBackground;
+}
