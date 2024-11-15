@@ -21,3 +21,12 @@ export const fechedDataMapper = (data: fechedCarData) => {
   MakeNameArray.sort((a, b) => a.localeCompare(b));
   return MakeNameArray;
 };
+
+
+export const YearsRange = (startYear: number, endYear: number) => {
+  let years: string[] = [];
+  for (let i = startYear; i <= endYear; i++) {
+    years.push(i.toString());
+  }
+  return years;
+}
