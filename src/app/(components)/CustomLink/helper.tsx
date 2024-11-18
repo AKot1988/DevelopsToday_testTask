@@ -1,5 +1,7 @@
+import { UrlObject } from "url";
+
 export type CustomLinkProps = {
-    href: string;
-    disabled?: boolean;
-    children: React.ReactNode;
-  };
+  href: string | UrlObject;
+  disabled?: boolean;
+  children: React.ReactNode;
+};

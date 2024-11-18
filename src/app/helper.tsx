@@ -4,7 +4,8 @@ export type carData = {
   VehicleTypeId: number;
   VehicleTypeName: string;
 };
-type fechedCarData = {
+
+export type fechedCarData = {
   Count: number;
   Message: string;
   SearchCriteria: string;
