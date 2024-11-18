@@ -30,3 +30,7 @@ export const YearsRange = (startYear: number, endYear: number) => {
   }
   return years;
 }
+
+export enum MainPageErrors {
+  NOT_FOUND = 'not_found',
+}
