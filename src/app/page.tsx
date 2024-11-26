@@ -10,10 +10,10 @@ const FilterPage = async ({
 }: {
   searchParams: Record<string, string>;
 }) => {
-  const cars: fechedCarData= await fetch(
-    "https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json"
-  ).then((res) => res.json());
-  console.log(searchParams["car"]);
+  // const cars: fechedCarData= await fetch(
+  //   "https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json"
+  // ).then((res) => res.json());
+  // console.log(searchParams["car"]);
   
   return (
     <div className={classes.container}>

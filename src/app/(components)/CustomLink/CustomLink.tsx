@@ -16,7 +16,7 @@ const CustomLink = ({ href, disabled, children }: CustomLinkProps) => {
       onClick={handleClick}
       style={{
         pointerEvents: disabled ? 'none' : 'auto',
-        color: disabled ? 'gray' : 'green',
+        color: disabled ? 'black' : 'green',
       }}
       aria-disabled={disabled}
     >

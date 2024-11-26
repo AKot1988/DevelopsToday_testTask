@@ -17,12 +17,13 @@ const FilterPageClientSide: FC<FilterPageClientSideProps> = ({ data }) => {
 
   const curentYear = new Date().getFullYear();
   const yearsRange = YearsRange(2015, curentYear);
-  const nextPageUrl = {
-    search: new URLSearchParams({
-      car: selectedCar,
-      year: selectedYear,
-    }).toString(),
-  };
+  // const nextPageUrl = {
+  //   search: new URLSearchParams({
+  //     car: selectedCar,
+  //     year: selectedYear,
+  //   }).toString(),
+  // };
+  const nextPageUrl = `/cars/${selectedCar.toLowerCase()}/${selectedYear}`;
   return (
     <>
       <DropDown
