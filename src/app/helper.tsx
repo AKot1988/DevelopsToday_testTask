@@ -32,6 +32,8 @@ export const YearsRange = (startYear: number, endYear: number) => {
   return years;
 }
 
+export const yearsRange = YearsRange(2015, new Date().getFullYear());
+
 export enum MainPageErrors {
   NOT_FOUND = 'not_found',
 }

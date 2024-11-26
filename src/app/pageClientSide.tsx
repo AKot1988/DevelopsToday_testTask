@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useState } from "react";
-import { fechedDataMapper, YearsRange, fechedCarData } from "./helper";
+import { fechedDataMapper, yearsRange, fechedCarData } from "./helper";
 import { DropDown, CustomLink } from "./(components)";
 
 interface FilterPageClientSideProps {
@@ -15,15 +15,13 @@ const FilterPageClientSide: FC<FilterPageClientSideProps> = ({ data }) => {
 
   const isDisabled = !selectedCar || !selectedYear;
 
-  const curentYear = new Date().getFullYear();
-  const yearsRange = YearsRange(2015, curentYear);
   // const nextPageUrl = {
   //   search: new URLSearchParams({
   //     car: selectedCar,
   //     year: selectedYear,
   //   }).toString(),
   // };
-  const nextPageUrl = `/cars/${selectedCar.toLowerCase()}/${selectedYear}`;
+  const nextPageUrl = `/${selectedCar.toLowerCase()}/${selectedYear}/filteredCars`;
   return (
     <>
       <DropDown
