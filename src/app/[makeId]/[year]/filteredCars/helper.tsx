@@ -9,3 +9,7 @@ export type carResponse = {
   VehicleTypeId?: number;
   VehicleTypeName?: string;
 };
+
+export enum FilteredCarsErrors {
+  NOT_FOUND = 'not_found',
+}
