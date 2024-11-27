@@ -4,6 +4,12 @@ export type carData = {
   VehicleTypeId: number;
   VehicleTypeName: string;
 };
+export type filteredCarData = {
+  Make_ID: number;
+  Make_Name: string;
+  Model_ID: number;
+  Model_Name: string;
+};
 
 export type fechedCarData = {
   Count: number;

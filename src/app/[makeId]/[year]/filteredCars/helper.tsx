@@ -1,5 +1,5 @@
 export interface FilteredCarsProps {
-    make: string;
+    makeId: string;
     year: string;
 }
 

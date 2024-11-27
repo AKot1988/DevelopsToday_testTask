@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { FC, useState } from "react";
-import { fechedDataMapper, yearsRange, fechedCarData } from "./helper";
-import { DropDown, CustomLink } from "./(components)";
+import { FC, useState, useEffect, use } from 'react';
+import { fechedDataMapper, yearsRange, fechedCarData } from './helper';
+import { DropDown, CustomLink } from './(components)';
 
 interface FilterPageClientSideProps {
   data: fechedCarData;
@@ -10,18 +10,28 @@ interface FilterPageClientSideProps {
 const FilterPageClientSide: FC<FilterPageClientSideProps> = ({ data }) => {
   const filteredManufacturers: string[] = fechedDataMapper(data);
 
-  const [selectedCar, setSelectedCar] = useState("");
-  const [selectedYear, setSelectedYear] = useState("");
+  const [selectedCar, setSelectedCar] = useState('');
+  const [selectedYear, setSelectedYear] = useState('');
+  const [nextPageUrl, setNextPageUrl] = useState('');
 
   const isDisabled = !selectedCar || !selectedYear;
 
+  let selectedCarID = '';
+  useEffect(() => {
+    data.Results.find((car) => {
+      if (car.MakeName === selectedCar) {
+        selectedCarID = car.MakeId.toString();
+      }
+    });
+    setNextPageUrl(`/${selectedCarID}/${selectedYear}/filteredCars`);
+  }, [selectedCar, selectedYear]);
   // const nextPageUrl = {
   //   search: new URLSearchParams({
   //     car: selectedCar,
   //     year: selectedYear,
   //   }).toString(),
   // };
-  const nextPageUrl = `/${selectedCar.toLowerCase()}/${selectedYear}/filteredCars`;
+  console.log(nextPageUrl);
   return (
     <>
       <DropDown
